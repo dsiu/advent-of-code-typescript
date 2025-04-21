@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Run tests and check coverage
-        run: npm coverage
+        run: yarn coverage
 #      - name: Report the results to Coveralls
 #        uses: coverallsapp/github-action@master
 #        with:
