@@ -1,3 +1,5 @@
-const data = '0'
+const data = `
+0
+`
 
 export {data}

@@ -1,2 +1,2 @@
-declare const data = "0";
+declare const data = '\n0\n';
 export { data };

@@ -1,3 +1,5 @@
-const data = '1'
+const data = `
+1
+`
 
 export {data}
