@@ -24,9 +24,8 @@ const parse = (data: string): number[][] | undefined => {
 const solvePart1 = (data: string): number => {
   const parsed = parse(data)
 
-  if (parsed === undefined) {
-    throw new Error('Invalid input data')
-  }
+  if (!parsed) throw new Error('Invalid input data')
+
 
   const [l1, l2] = parsed
   return part1(l1, l2)
@@ -35,9 +34,8 @@ const solvePart1 = (data: string): number => {
 const solvePart2 = (data: string): number => {
   const parsed = parse(data)
 
-  if (parsed === undefined) {
-    throw new Error('Invalid input data')
-  }
+  if (!parsed) throw new Error('Invalid input data')
+
 
   const [l1, l2] = parsed
   return part2(l1, l2)

@@ -12,18 +12,7 @@ const isSafe = (report) => {
     return (isInc(diffs) || isDec(diffs)) && isDiffMinOne(diffs) && isDiffMaxThree(diffs);
 };
 const removeNthElem = (xs, i) => xs.toSpliced(i, 1);
-const isSafeWithTolerance = (report) => {
-    if (isSafe(report)) {
-        return true;
-    }
-    else {
-        const subReports = report.reduce((acc, x, i) => {
-            acc.push(removeNthElem(report, i));
-            return acc;
-        }, []);
-        return subReports.some(r => isSafe(r));
-    }
-};
+const isSafeWithTolerance = (report) => isSafe(report) || report.some((_, i) => isSafe(removeNthElem(report, i)));
 const countCondMet = (reports, cond) => reports.filter(cond).length;
 const part1 = (reports) => countCondMet(reports, isSafe);
 const part2 = (reports) => countCondMet(reports, isSafeWithTolerance);

@@ -23,17 +23,9 @@ const isSafe = (report: Report): boolean => {
 
 const removeNthElem = (xs: number[], i: number) => xs.toSpliced(i, 1)
 
-const isSafeWithTolerance = (report: Report): boolean => {
-  if (isSafe(report)) {
-    return true
-  } else {
-    const subReports: number[][] = report.reduce((acc, x, i) => {
-      acc.push(removeNthElem(report, i))
-      return acc
-    }, [] as number[][])
-    return subReports.some(r => isSafe(r))
-  }
-}
+
+const isSafeWithTolerance = (report: Report): boolean =>
+  isSafe(report) || report.some((_, i) => isSafe(removeNthElem(report, i)));
 
 const countCondMet = (reports: Reports,
   cond: (report: Report) => boolean): number => reports.filter(cond).length

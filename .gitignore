@@ -16,3 +16,5 @@ node_modules/
 
 # Project files:
 *.sublime-*
+/.clj-kondo/.cache/v1/lock
+/.lsp/.cache/db.transit.json

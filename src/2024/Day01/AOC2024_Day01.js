@@ -11,17 +11,15 @@ const parse = (data) => {
 };
 const solvePart1 = (data) => {
     const parsed = parse(data);
-    if (parsed === undefined) {
+    if (!parsed)
         throw new Error('Invalid input data');
-    }
     const [l1, l2] = parsed;
     return part1(l1, l2);
 };
 const solvePart2 = (data) => {
     const parsed = parse(data);
-    if (parsed === undefined) {
+    if (!parsed)
         throw new Error('Invalid input data');
-    }
     const [l1, l2] = parsed;
     return part2(l1, l2);
 };
