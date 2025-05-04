@@ -11,8 +11,8 @@ const calMultiplication = (str) => {
         return args.reduce(_.multiply, 1);
     });
 };
-const part1 = (str) => _.sum(calMultiplication(str));
-const part2 = (str) => _.sum(str.split('do()')
+const part1 = (memory) => _.sum(calMultiplication(memory));
+const part2 = (memory) => _.sum(memory.split('do()')
     .map(x => calMultiplication(x.split('don\'t()')[0]))
     .map(_.sum));
 const parse = (data) => data.trim();

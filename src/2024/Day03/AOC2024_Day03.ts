@@ -19,17 +19,17 @@ const calMultiplication = (str: string): number[] | undefined => {
 
 }
 
-const part1 = (str: string): number =>
-  _.sum(calMultiplication(str))
+const part1 = (memory: string): number =>
+  _.sum(calMultiplication(memory))
 
-const part2 = (str: string): number =>
+const part2 = (memory: string): number =>
   _.sum(
-    str.split('do()')
+    memory.split('do()')
       .map(x => calMultiplication(x.split('don\'t()')[0]))
       .map(_.sum)
   )
 
-const parse = (data: string) => data.trim()
+const parse = (data: string): string => data.trim()
 
 const solvePart1 = (data: string): number => {
   return part1(parse(data))
